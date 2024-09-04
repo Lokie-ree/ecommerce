@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
+import { Hero } from "./components";
 
 export default async function Home() {
   const products = await client.fetch(groq`*[_type=="product"]`);
@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-red-400">Hello World</h1>
+      <Hero />
     </main>
   );
 }
